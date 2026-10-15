@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="489.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sp.senac.br.pizzaria.controller.ClienteController">
+   <children>
+      <Label layoutX="18.0" layoutY="23.0" text="ID:">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+       <Label layoutX="95.0" layoutY="23.0" text="Telefone:">
+           <font>
+               <Font name="System Bold" size="14.0" />
+           </font>
+       </Label>
+      <TextField fx:id="tfId" editable="false" layoutX="42.0" layoutY="21.0" prefHeight="25.0" prefWidth="41.0" promptText="id" />
+      <Label layoutX="19.0" layoutY="61.0" text="Nome:">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="tfNome" layoutX="70.0" layoutY="59.0" prefHeight="25.0" prefWidth="317.0" promptText="Nome Completo" />
+      <TextField fx:id="tfTelefone" layoutX="164.0" layoutY="21.0" promptText="Telefone" />
+      <Label layoutX="398.0" layoutY="61.0" text="CPF:">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="tfCpf" layoutX="434.0" layoutY="59.0" promptText="CPF" />
+      <Label layoutX="320.0" layoutY="24.0" text="Nascimento:">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <DatePicker fx:id="dpNascimento" layoutX="409.0" layoutY="21.0" promptText="dd/mm/aaaa" />
+      <TextArea fx:id="taEndereco" layoutX="93.0" layoutY="98.0" prefHeight="51.0" prefWidth="490.0" promptText="Endereço completo" />
+      <Label layoutX="19.0" layoutY="98.0" text="Endereço:">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Button layoutX="195.0" layoutY="159.0" mnemonicParsing="false" onAction="#salvar" prefHeight="25.0" prefWidth="19.0">
+         <graphic>
+            <ImageView fitHeight="33.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
+                <Image url="@../icones/iconesalvar.png" />
+            </ImageView>
+         </graphic></Button>
+      <Button layoutX="249.0" layoutY="159.0" mnemonicParsing="false" onAction="#excluir">
+          <graphic>
+              <ImageView fitHeight="33.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
+                  <Image url="@../icones/iconexcluir.png" />
+              </ImageView>
+          </graphic></Button>
+      <Button layoutX="303.0" layoutY="159.0" mnemonicParsing="false" onAction="#limpar">
+          <graphic>
+              <ImageView fitHeight="33.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
+                  <Image url="@../icones/iconelimpar.png" />
+              </ImageView>
+          </graphic></Button>
+      <Button layoutX="357.0" layoutY="159.0" mnemonicParsing="false" onAction="#buscar">
+          <graphic>
+              <ImageView fitHeight="33.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
+                  <Image url="@../icones/iconebuscar.png" />
+              </ImageView>
+          </graphic></Button>
+      <TableView fx:id="tbCliente" layoutX="16.0" layoutY="211.0" prefHeight="260.0" prefWidth="569.0">
+        <columns>
+          <TableColumn fx:id="colId" prefWidth="43.0" text="ID" />
+          <TableColumn fx:id="colNome" prefWidth="372.0" text="Nome" />
+            <TableColumn fx:id="colTelefone" prefWidth="153.0" text="Telefone" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

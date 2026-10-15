@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="489.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sp.senac.br.pizzaria.controller.PizzaController">
+    <children>
+        <Label layoutX="18.0" layoutY="23.0" text="ID:">
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font>
+        </Label>
+        <TextField fx:id="tfId" editable="false" layoutX="42.0" layoutY="21.0" prefHeight="25.0" prefWidth="41.0" promptText="ID" />
+        <Label layoutX="19.0" layoutY="98.0" text="Ingredientes:">
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font>
+        </Label>
+        <TextArea fx:id="taIngredientes" layoutX="112.0" layoutY="98.0" prefHeight="51.0" prefWidth="468.0" promptText="Ingredientes da pizza" />
+        <Button layoutX="195.0" layoutY="159.0" mnemonicParsing="false" onAction="#salvar" prefHeight="25.0" prefWidth="19.0">
+            <graphic>
+                <ImageView fitHeight="33.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
+                    <Image url="@../icones/iconesalvar.png" />
+                </ImageView>
+            </graphic></Button>
+        <Button layoutX="249.0" layoutY="159.0" mnemonicParsing="false" onAction="#excluir">
+            <graphic>
+                <ImageView fitHeight="33.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
+                    <Image url="@../icones/iconexcluir.png" />
+                </ImageView>
+            </graphic></Button>
+        <Button layoutX="303.0" layoutY="159.0" mnemonicParsing="false" onAction="#limpar">
+            <graphic>
+                <ImageView fitHeight="33.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
+                    <Image url="@../icones/iconelimpar.png" />
+                </ImageView>
+            </graphic></Button>
+        <Button layoutX="357.0" layoutY="159.0" mnemonicParsing="false" onAction="#buscar">
+            <graphic>
+                <ImageView fitHeight="33.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
+                    <Image url="@../icones/iconebuscar.png" />
+                </ImageView>
+            </graphic></Button>
+        <TableView fx:id="tbPizza" layoutX="16.0" layoutY="211.0" prefHeight="260.0" prefWidth="569.0">
+            <columns>
+                <TableColumn fx:id="colId" prefWidth="43.0" text="ID" />
+                <TableColumn fx:id="colSabor" prefWidth="372.0" text="Sabor" />
+                <TableColumn fx:id="colTamanho" prefWidth="153.0" text="Tamanho" />
+            </columns>
+        </TableView>
+      <TextField fx:id="tfSabor" layoutX="144.0" layoutY="21.0" prefHeight="25.0" prefWidth="437.0" promptText="Ex.: Marguerita" />
+      <Label layoutX="93.0" layoutY="24.0" text="Sabor:">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="cbTipo" layoutX="58.0" layoutY="59.0" prefWidth="150.0" />
+      <Label layoutX="19.0" layoutY="61.0" text="Tipo:">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="217.0" layoutY="61.0" text="Tamanho:">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="cbTamanho" layoutX="288.0" layoutY="59.0" prefWidth="150.0" />
+      <Label layoutX="446.0" layoutY="61.0" text="Preço:">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="tfPreco" layoutX="493.0" layoutY="59.0" prefHeight="25.0" prefWidth="87.0" promptText="0,00" />
+    </children>
+</AnchorPane>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<persistence xmlns="https://jakarta.ee/xml/ns/persistence" version="3.2">
+    <persistence-unit name="pizzaria">
+        <class>sp.senac.br.pizzaria.model.Pizza</class>
+        <class>sp.senac.br.pizzaria.model.Cliente</class>
+        <properties>
+            <property name="jakarta.persistence.jdbc.user" value="root"/>
+            <property name="jakarta.persistence.jdbc.password" value="1234"/>
+            <property name="jakarta.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/pizzaria"/>
+            <property name="hibernate.show_sql" value="true"/>
+            <property name="hibernate.format_sql" value="true"/>
+            <property name="hibernate.hbm2ddl.auto" value="update"/>
+        </properties>
+    </persistence-unit>
+</persistence>
