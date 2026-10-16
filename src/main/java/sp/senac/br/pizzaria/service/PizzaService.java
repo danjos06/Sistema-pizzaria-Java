@@ -12,12 +12,14 @@ public class PizzaService {
     private final InterfaceDao<Pizza> rep = new PizzaRepository();
 
     public void salvar(Pizza pizza){
-        if(pizza.getTelefone().isBlank()){
-            throw new RuntimeException("O telefone é obrigatório");
-        } else if(cliente.getNome().isBlank()){
-            throw new RuntimeException("O nome é obrigatório");
-        } else if(cliente.getEndereco().isBlank()){
-            throw new RuntimeException("O endereço é obrigatório.");
+        if(pizza.getSabor().isBlank()){
+            throw new RuntimeException("O sabor é obrigatório");
+        } else if(pizza.getPreco() == 0){
+            throw new RuntimeException("O preço é obrigatório");
+        } else if(pizza.getTipo() == null){
+            throw new RuntimeException("O tipo é obrigatório");
+        } else if(pizza.getTamanho() == null){
+            throw new RuntimeException("O tamanho é obrigatório.");
         } else {
             if(pizza.getId() == null) {
                 rep.inserir(pizza);
@@ -27,15 +29,15 @@ public class PizzaService {
         }
     }
 
-    public List<Cliente> listar(){
+    public List<Pizza> listar(){
         return rep.listar();
     }
 
-    public void excluir(Cliente cliente){
-        rep.excluir(cliente.getId());
+    public void excluir(Pizza pizza){
+        rep.excluir(pizza.getId());
     }
 
-    public List<Cliente> buscar(String telefone){
-        return rep.buscar(telefone);
+    public List<Pizza> buscar(String sabor){
+        return rep.buscar(sabor);
     }
 }

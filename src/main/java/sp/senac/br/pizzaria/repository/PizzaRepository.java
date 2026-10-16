@@ -54,6 +54,14 @@ public class PizzaRepository implements InterfaceDao<Pizza> {
 
     @Override
     public List<Pizza> buscar(String valor) {
-        return List.of();
+        try (EntityManager manager = JpaFactory.getEntityManager()) {
+            return manager.createQuery(
+                            "SELECT p FROM Pizza p WHERE LOWER(p.sabor) LIKE :sabor ORDER BY p.sabor",
+                            Pizza.class)
+                    .setParameter("sabor", "%" + valor.toLowerCase() + "%")
+                    .getResultList();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 }
