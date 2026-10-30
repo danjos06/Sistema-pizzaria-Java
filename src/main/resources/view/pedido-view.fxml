@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sp.senac.br.pizzaria.controller.PedidoController">
+   <children>
+       <Label layoutX="18.0" layoutY="23.0" text="Telefone:">
+           <font>
+               <Font name="System Bold" size="14.0" />
+           </font>
+       </Label>
+      <TextField fx:id="tfTelefone" layoutX="87.0" layoutY="21.0" onAction="#buscarCliente" promptText="Enter para buscar" />
+      <Label layoutX="250.0" layoutY="24.0" text="Cliente:">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="tfCliente" editable="false" layoutX="310.0" layoutY="22.0" prefHeight="25.0" prefWidth="273.0" promptText="Informações do cliente" />
+      <Label layoutX="17.0" layoutY="56.0" text="Endereço:">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="tfEndereco" editable="false" layoutX="87.0" layoutY="54.0" prefHeight="25.0" prefWidth="496.0" promptText="Endereço do cliente" />
+      <TextField fx:id="tfIngredientes" layoutX="20.0" layoutY="94.0" onAction="#buscarPizza" prefHeight="25.0" prefWidth="241.0" promptText="Busca p/ Nome ou Ingredientes" />
+      <ListView fx:id="lvPizza" layoutX="20.0" layoutY="127.0" prefHeight="198.0" prefWidth="241.0" />
+      <ListView fx:id="lvItem" layoutX="340.0" layoutY="127.0" prefHeight="198.0" prefWidth="241.0" />
+      <Button fx:id="btAdd" layoutX="286.0" layoutY="213.0" mnemonicParsing="false" onAction="#addItem" text="&gt;&gt;" />
+      <Button fx:id="btRemove" layoutX="286.0" layoutY="249.0" mnemonicParsing="false" onAction="#removeItem" text="&lt;&lt;" />
+      <Spinner fx:id="spQtd" editable="true" layoutX="270.0" layoutY="175.0" prefHeight="25.0" prefWidth="65.0" />
+      <Label fx:id="lbTotal" layoutX="507.0" layoutY="97.0" text="R$ 0,00" textAlignment="RIGHT">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="cbPagamento" layoutX="340.0" layoutY="94.0" prefHeight="25.0" prefWidth="158.0" promptText="Forma de pagamento" />
+       <Button fx:id="btPedido" layoutX="532.0" layoutY="336.0" mnemonicParsing="false" onAction="#gerarPedido" prefHeight="25.0" prefWidth="19.0">
+           <graphic>
+               <ImageView fitHeight="33.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
+                   <Image url="@../icones/iconepedido.png" />
+               </ImageView>
+           </graphic></Button>
+   </children>
+</AnchorPane>

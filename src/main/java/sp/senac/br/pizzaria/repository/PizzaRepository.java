@@ -1,6 +1,7 @@
 package sp.senac.br.pizzaria.repository;
 
 import jakarta.persistence.EntityManager;
+import jakarta.persistence.TypedQuery;
 import sp.senac.br.pizzaria.dao.InterfaceDao;
 import sp.senac.br.pizzaria.factory.JpaFactory;
 import sp.senac.br.pizzaria.model.Pizza;
@@ -60,6 +61,16 @@ public class PizzaRepository implements InterfaceDao<Pizza> {
                             Pizza.class)
                     .setParameter("sabor", "%" + valor.toLowerCase() + "%")
                     .getResultList();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public List<Pizza> buscarPizza(String valor) {
+        try(EntityManager manager = JpaFactory.getEntityManager()) {
+            TypedQuery<Pizza> query = manager.createQuery("FROM Pizza p WHERE p.ingredientes LIKE :valor OR p.sabor LIKE :valor ORDER BY p.sabor", Pizza.class);
+            query.setParameter("valor", "%"+valor+"%");
+            return query.getResultList();
         } catch (Exception e) {
             throw new RuntimeException(e);
         }

@@ -22,4 +22,9 @@ public class Pizza {
     private Tamanho tamanho;
 
     private double preco;
+
+    @Override
+    public String toString(){
+        return String.format("%s - %s (R$ %5.2f)", getSabor(), getTamanho(), getPreco());
+    }
 }

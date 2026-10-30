@@ -12,14 +12,16 @@ import java.io.IOException;
 public class Main extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-//        ConnectionFactory.getConnection();
-        JpaFactory.getEntityManager();
+//        JpaFactory.getEntityManager();
 
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("/view/pizza-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("/view/inicial-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         stage.setTitle("Pizzaria");
-        stage.setResizable(false);
+        stage.setResizable(true);
+        stage.setMinHeight(400);
+        stage.setMinWidth(600);
         stage.setScene(scene);
+        stage.setMaximized(true);
         stage.show();
     }
 }

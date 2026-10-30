@@ -3,6 +3,8 @@
     <persistence-unit name="pizzaria">
         <class>sp.senac.br.pizzaria.model.Pizza</class>
         <class>sp.senac.br.pizzaria.model.Cliente</class>
+        <class>sp.senac.br.pizzaria.model.Pedido</class>
+        <class>sp.senac.br.pizzaria.model.ItemPedido</class>
         <properties>
             <property name="jakarta.persistence.jdbc.user" value="root"/>
             <property name="jakarta.persistence.jdbc.password" value="1234"/>
